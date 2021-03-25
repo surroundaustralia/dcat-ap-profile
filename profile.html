@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DCAT-AP Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/profile/dcat-ap",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "None"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.3</span>
+  </div>
+  <h1>DCAT-AP Profile</h1>
+<h3><em>A Profile</em></h3>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/profile/dcat-ap</code></dd>
+        
+        <dt><a href="https://www.w3.org/TR/dx-prof/#Property:isProfileOf">Is Profile Of</a></dt>
+        <dd>
+            <a href="https://www.w3.org/TR/vocab-dcat/">https://www.w3.org/TR/vocab-dcat/</a><br/>
+        </dd>
+        
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher">Publisher</a>(s)</dt>
+        <dd>
+            
+    <a href="https://linked.data.gov.au/org/surround">SURROUND Australia Pty Ltd</a><br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    <a href="http://orcid.org/0000-0002-8742-7730">Nicholas J Car</a>
+    <a href="http://orcid.org/0000-0002-8742-7730"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:nicholas.car@surroundaustrlaia.com">nicholas.car@surroundaustrlaia.com</a>) of 
+    <a href="https://surroundaustralia.com">SURROUND Australia Pty Ltd</a><br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
+        <dd>2021-03-25</dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
+        <dd>2021-03-25</dd>
+        <dt>Profile RDF</dt>
+        <dd><a href="data_file.ttl">RDF (turtle)</a></dd>
+    </dl>
+      <dt><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasResource">Has Resource Descriptor(s)</a></dt>
+    <dd>
+          <a href="#ub16bL19C5">Specification</a><br/>
+          <a href="#ub16bL27C5">Deprecated URIs Validator</a><br/>
+          <a href="#ub16bL35C5">Controlled Vocabulary Constraints Validator</a><br/>
+          <a href="#ub16bL43C5">RDF classes and properties Validator</a><br/>
+          <a href="#ub16bL51C5">Class overview</a><br/>
+          <a href="#ub16bL59C5">Examples</a><br/>
+    </dd>
+    <h2>Description</h2>
+    <div id="comment">
+        <p>This is a PROF-formalised version of DCAT-AP 2.0.1, the <em>DCAT Application Profilefor data portals in Europe, version 2.0.1</em>. This is done so DCAT-AP resources - validators, images and so on - can be associated with PROF constructs which are necissary for some tooling.</p>
+    </div>
+</section>
+  <section id="resource_descriptors">
+      <h2>Resource Descriptors</h2>
+  
+  
+  
+  
+  
+      <div class="entity resource_descriptor" id="ub16bL19C5">
+    <h3>Specification</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>The DCAT-AP specification, as published by the EU</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2020-06/e4823478-4458-4546-9a85-3609867ad089/DCAT_AP_2.0.1.pdf">https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2020-06/e4823478-4458-4546-9a85-3609867ad089/DCAT_AP_2.0.1.pdf</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/specification">role:specification</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="https://www.w3.org/TR/">https://www.w3.org/TR/</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub16bL27C5">
+    <h3>Deprecated URIs Validator</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>A SHACL validator Shapes file that indicated URI changes that require attention by the catalogue owner</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/dcat-ap/validator-mc">https://w3id.org/profile/dcat-ap/validator-mc</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/validation">role:validation</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub16bL35C5">
+    <h3>Controlled Vocabulary Constraints Validator</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>A SHACL validator Shapes file implementing Controlled Vocabulary Constraints of DCAT Application Profile for Data Portals in Europe</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/dcat-ap/validator-cv">https://w3id.org/profile/dcat-ap/validator-cv</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/validation">role:validation</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub16bL43C5">
+    <h3>RDF classes and properties Validator</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>A SHACL validator Shapes file implementing RDF classes and properties validation of DCAT Application Profile for Data Portals in Europe</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/dcat-ap/validator-cp">https://w3id.org/profile/dcat-ap/validator-cp</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/validation">role:validation</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub16bL51C5">
+    <h3>Class overview</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>An image of the DCAT-AP classes, the relationships between them and the optional/mandatory nature of elements</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2020-06/8d26212c-3ed4-4c9d-b5a5-0b5934daae34/DCAT_AP_2.0.1.png">https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2020-06/8d26212c-3ed4-4c9d-b5a5-0b5934daae34/DCAT_AP_2.0.1.png</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/guidance">role:guidance</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="https://www.omg.org/spec/UML/">https://www.omg.org/spec/UML/</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub16bL59C5">
+    <h3>Examples</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>Online folder of examples of valid and invalid DCAT-AP data</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/dcat-ap/examples">https://w3id.org/profile/dcat-ap/examples</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/example">role:example</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </section>
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>prof</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>role</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/role/</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+</body>
+</html>

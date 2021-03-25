@@ -1,0 +1,78 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/profile/dcat-ap>
+    a prof:Profile ;
+    rdfs:seeAlso <https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/201-0> ;
+    dcterms:created "2021-03-25"^^xsd:date ;
+    dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:modified "2021-03-25"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    skos:definition "This is a PROF-formalised version of DCAT-AP 2.0.1, the _DCAT Application Profilefor data portals in Europe, version 2.0.1_. This is done so DCAT-AP resources - validators, images and so on - can be associated with PROF constructs which are necissary for some tooling."@en ;
+    skos:prefLabel "DCAT-AP Profile" ;
+    prof:hasResource 
+    [
+        skos:prefLabel "Specification"@en ;
+        dcterms:description "The DCAT-AP specification, as published by the EU"@en ;
+        dcterms:conformsTo <https://www.w3.org/TR/> ;
+        dcterms:format "application/pdf" ;
+        prof:hasArtifact <https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2020-06/e4823478-4458-4546-9a85-3609867ad089/DCAT_AP_2.0.1.pdf> ;
+        prof:hasRole role:specification
+    ] ,    
+    [
+        skos:prefLabel "Deprecated URIs Validator"@en ;
+        dcterms:description "A SHACL validator Shapes file that indicated URI changes that require attention by the catalogue owner"@en ;
+        dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+        dcterms:format "text/turtle" ;
+        prof:hasArtifact <https://w3id.org/profile/dcat-ap/validator-mc> ;
+        prof:hasRole role:validation
+    ] ,
+    [
+        skos:prefLabel "Controlled Vocabulary Constraints Validator"@en ;
+        dcterms:description "A SHACL validator Shapes file implementing Controlled Vocabulary Constraints of DCAT Application Profile for Data Portals in Europe"@en ;
+        dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+        dcterms:format "text/turtle" ;
+        prof:hasArtifact <https://w3id.org/profile/dcat-ap/validator-cv> ;
+        prof:hasRole role:validation
+    ] ,
+    [
+        skos:prefLabel "RDF classes and properties Validator"@en ;
+        dcterms:description "A SHACL validator Shapes file implementing RDF classes and properties validation of DCAT Application Profile for Data Portals in Europe"@en ;
+        dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+        dcterms:format "text/turtle" ;
+        prof:hasArtifact <https://w3id.org/profile/dcat-ap/validator-cp> ;
+        prof:hasRole role:validation
+    ] ,     
+    [
+        skos:prefLabel "Class overview"@en ;
+        dcterms:description "An image of the DCAT-AP classes, the relationships between them and the optional/mandatory nature of elements"@en ;
+        dcterms:conformsTo <https://www.omg.org/spec/UML/> ;
+        dcterms:format "image/png" ;
+        prof:hasArtifact <https://joinup.ec.europa.eu/sites/default/files/distribution/access_url/2020-06/8d26212c-3ed4-4c9d-b5a5-0b5934daae34/DCAT_AP_2.0.1.png> ;
+        prof:hasRole role:guidance
+    ] , 
+    [
+        skos:prefLabel "Examples"@en ;
+        dcterms:description "Online folder of examples of valid and invalid DCAT-AP data"@en ;
+        prof:hasArtifact <https://w3id.org/profile/dcat-ap/examples> ;
+        prof:hasRole role:example
+    ] ;
+    prof:isProfileOf <https://www.w3.org/TR/vocab-dcat/> ;
+.
+
+<http://orcid.org/0000-0002-8742-7730>
+    sdo:name "Nicholas J Car" ;
+    sdo:email "nicholas.car@surroundaustrlaia.com"^^xsd:anyURI ;
+    sdo:affiliation <https://linked.data.gov.au/org/surround> ;
+.
+
+<https://linked.data.gov.au/org/surround> a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
